@@ -1,3 +1,4 @@
+import TableList from "../../components/table/TableList";
 import Chart from "../../components/chart/Chart";
 import Featured from "../../components/featured/Featured";
 import Navbar from "../../components/navbar/Navbar";
@@ -20,6 +21,11 @@ function Home() {
         <div className="charts">
           <Featured />
           <Chart />
+        </div>
+
+        <div className="list-container">
+          <div className="list-title">Latest Transactions</div>
+          <TableList />
         </div>
       </div>
     </div>
