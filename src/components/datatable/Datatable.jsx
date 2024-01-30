@@ -42,10 +42,10 @@ function Datatable() {
 
       <div className="datatable">
         <div className="datatable-title">
-          Add New User
           <Link className="link" to="/users/new">
             Add New
           </Link>
+          Add New User
         </div>
         <DataGrid
           className="datagrid"
