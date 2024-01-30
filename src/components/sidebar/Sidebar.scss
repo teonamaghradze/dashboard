@@ -1,4 +1,8 @@
 .sidebar {
+  a {
+    text-decoration: none;
+  }
+
   flex: 1;
   border-right: 0.4px solid rgb(221, 210, 221);
   min-height: 100vh;

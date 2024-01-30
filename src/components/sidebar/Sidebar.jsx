@@ -15,11 +15,18 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { DarkmodeContext } from "../../context/darkmodeContext";
+
 function Sidebar() {
+  const { dispatch } = useContext(DarkmodeContext);
   return (
-    <div className="sidebar">
+    <div className={"sidebar"}>
       <div className="top">
-        <span className="logo">ADMIN</span>
+        <Link to="/">
+          <span className="logo">ADMIN</span>
+        </Link>
       </div>
 
       <hr />
@@ -28,19 +35,25 @@ function Sidebar() {
         <ul>
           <p className="title">MAIN</p>
           <li>
-            <SpaceDashboardIcon className="icon" />
-            <span>Dashboard</span>
+            <Link to="/">
+              <SpaceDashboardIcon className="icon" />
+              <span>Dashboard</span>
+            </Link>
           </li>
 
           <p className="title">LISTS</p>
 
           <li>
-            <PeopleIcon className="icon" />
-            <span>Users</span>
+            <Link to="/users">
+              <PeopleIcon className="icon" />
+              <span>Users</span>
+            </Link>
           </li>
           <li>
-            <CategoryIcon className="icon" />
-            <span>Products</span>
+            <Link to="/products">
+              <CategoryIcon className="icon" />
+              <span>Products</span>
+            </Link>
           </li>
           <li>
             <RedeemIcon className="icon" />
@@ -95,8 +108,14 @@ function Sidebar() {
       </div>
 
       <div className="bottom">
-        <LightModeIcon className="mode-option" />
-        <DarkModeIcon className="mode-option" />
+        <LightModeIcon
+          className="mode-option"
+          onClick={() => dispatch({ type: "LIGHT" })}
+        />
+        <DarkModeIcon
+          className="mode-option"
+          onClick={() => dispatch({ type: "DARK" })}
+        />
         {/* <div className="color-option"></div>
         <div className="color-option"></div> */}
       </div>

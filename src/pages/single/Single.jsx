@@ -15,12 +15,16 @@ function Single() {
             <div className="edit-button">Edit</div>
             <h6>Information</h6>
             <div className="item">
-              <img src="" alt="item-img" className="item-img" />
+              <img
+                src="https://wp.en.aleteia.org/wp-content/uploads/sites/2/2014/10/ydju4h4d_fbaz1vvmtn0gxpibnhl_w9gbacmmxwa8afhusjctvvdssl8ynqvl8xerqgqlfkgtt5mkivfyv3z10-rjhxx.jpg?w=640&crop=1"
+                alt="item-img"
+                className="item-img"
+              />
               <div className="details">
-                <h1>Jane Doe</h1>
+                <h1>Bilbo Baggins</h1>
                 <div className="detail-item">
                   <span>Email:</span>
-                  <span className="item-key">janedoe@gmail.com</span>
+                  <span className="item-key">bilbo@gmail.com</span>
                 </div>
 
                 <div className="detail-item">
@@ -30,9 +34,7 @@ function Single() {
 
                 <div className="detail-item">
                   <span>Address:</span>
-                  <span className="item-key">
-                    Station square #2. 0100 TBILISI.
-                  </span>
+                  <span className="item-key">Bag End, The Shire</span>
                 </div>
 
                 <div className="detail-item">

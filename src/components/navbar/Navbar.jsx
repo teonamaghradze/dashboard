@@ -6,8 +6,11 @@ import AllOutIcon from "@mui/icons-material/AllOut";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import ListIcon from "@mui/icons-material/List";
+import { useContext } from "react";
+import { DarkmodeContext } from "../../context/darkmodeContext";
 
 function Navbar() {
+  const { dispatch } = useContext(DarkmodeContext);
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -23,7 +26,10 @@ function Navbar() {
           </div>
 
           <div className="item">
-            <DarkModeIcon className="icon" />
+            <DarkModeIcon
+              className="icon"
+              onClick={() => dispatch({ type: "TOGGLE" })}
+            />
           </div>
 
           <div className="item">
