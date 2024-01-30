@@ -1,0 +1,14 @@
+.products {
+  display: flex;
+  width: 100%;
+
+  .products-container {
+    // width: 50%;
+    flex: 6;
+  }
+
+  .left {
+    // width: 10%;
+    flex: 1;
+  }
+}

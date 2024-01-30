@@ -4,6 +4,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { userColumns, userRows } from "../../dataSource";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import TableList from "../table/TableList";
 
 function Datatable() {
   const [data, setData] = useState(userRows);
@@ -36,26 +37,30 @@ function Datatable() {
   ];
 
   return (
-    <div className="datatable">
-      <div className="datatable-title">
-        Add New User
-        <Link className="link" to="/users/new">
-          Add New
-        </Link>
+    <>
+      {/* <TableList /> */}
+
+      <div className="datatable">
+        <div className="datatable-title">
+          Add New User
+          <Link className="link" to="/users/new">
+            Add New
+          </Link>
+        </div>
+        <DataGrid
+          className="datagrid"
+          rows={data}
+          columns={userColumns.concat(actionColumn)}
+          initialState={{
+            pagination: {
+              paginationModel: { page: 0, pageSize: 5 },
+            },
+          }}
+          pageSizeOptions={[5, 10]}
+          checkboxSelection
+        />
       </div>
-      <DataGrid
-        className="datagrid"
-        rows={data}
-        columns={userColumns.concat(actionColumn)}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 5 },
-          },
-        }}
-        pageSizeOptions={[5, 10]}
-        checkboxSelection
-      />
-    </div>
+    </>
   );
 }
 
